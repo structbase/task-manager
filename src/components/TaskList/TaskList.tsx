@@ -7,6 +7,7 @@ export const TaskList: React.FC<TaskListProps> = ({
     onStatusChange,
     onDelete,
 }) => {
+    // show empty state message when there are no tasks to display
     if (tasks.length === 0) {
         return (
             <div>
@@ -14,6 +15,7 @@ export const TaskList: React.FC<TaskListProps> = ({
             </div>
         );
     }
+    // render list of task items, each with its own controls for status and deletion
     return (
         <div>
             {tasks.map((task) => (

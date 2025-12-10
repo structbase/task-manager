@@ -1,6 +1,7 @@
 import React from "react";
 import type { TaskItemProps, TaskStatus } from "../../types";
 
+// helper function to capitalize words, handles hypenated strings like "in-progress"
 const capitalize = (str: string): string => {
     return str
         .split("-")
@@ -15,10 +16,12 @@ export const TaskItem: React.FC<TaskItemProps> = ({
 }) => {
     return (
         <div>
+            {/* header section with task title and status badge */}
             <div>
                 <h3>{task.title}</h3>
                 <span>{capitalize(task.status)}</span>
             </div>
+            {/* task details section showing duedate, description and priority level */}
             <div>
                 <div>
                     <span>Due: </span>
@@ -30,6 +33,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
                     <span>{capitalize(task.priority)}</span>
                 </div>
             </div>
+            {/* action controls to update status or delete the task */}
             <div>
                 <select
                     value={task.status}

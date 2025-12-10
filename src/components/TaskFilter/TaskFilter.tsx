@@ -2,14 +2,17 @@ import React from "react";
 import type { TaskFilterProps, TaskStatus } from "../../types";
 
 export const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
+    // local state for managing the status filter dropdown, defaults to "all"
     const [statusFilter, setStatusFilter] = React.useState<TaskStatus | "all">(
         "all"
     );
 
+    // local state for managing the priority filter dropdown, defaults to "all"
     const [priorityFilter, setPriorityFilter] = React.useState<
         "low" | "medium" | "high" | "all"
     >("all");
 
+    // handles status dropdown changes and notifies parent with updated filter values
     const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = e.target.value as TaskStatus | "all";
         setStatusFilter(newStatus);
@@ -20,6 +23,7 @@ export const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
         });
     };
 
+    // handles priority dropdown changes and notifies parent with updated filter values
     const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newPriority = e.target.value as "low" | "medium" | "high" | "all";
         setPriorityFilter(newPriority);
@@ -30,6 +34,7 @@ export const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
         });
     };
 
+    // render filter controls with dropdowns for status and priority selection
     return (
         <div>
             <div>

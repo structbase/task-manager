@@ -5,6 +5,7 @@ import { TaskList } from "./components/TaskList/TaskList";
 import { TaskFilter } from "./components/TaskFilter/TaskFilter";
 
 function App() {
+    // initial task data with sample tasks in different states and priorities
     const [tasks, setTasks] = useState<Task[]>([
         // PENDING
         {
@@ -85,11 +86,13 @@ function App() {
         },
     ]);
 
+    // filter state to track which status and priority filters are active
     const [filters, setFilters] = useState<{
         status?: TaskStatus;
         priority?: "low" | "medium" | "high";
     }>({});
 
+    // updates a specific task's status when user changes it from the dropdown
     const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
         setTasks((prev) =>
             prev.map((task) =>
@@ -98,10 +101,12 @@ function App() {
         );
     };
 
+    // removes a task from the list when delete button is clicked
     const handleDelete = (taskId: string) => {
         setTasks((prev) => prev.filter((task) => task.id !== taskId));
     };
 
+    // updates filter state when user changes filter controls
     const handleFilterChange = (newFilters: {
         status?: TaskStatus;
         priority?: "low" | "medium" | "high";
@@ -109,6 +114,7 @@ function App() {
         setFilters(newFilters);
     };
 
+    // filters tasks based on active status and priority filters, shows all if no filters set
     const filteredTasks = tasks.filter((task) => {
         const statusMatch = filters.status
             ? task.status === filters.status
@@ -119,6 +125,7 @@ function App() {
         return statusMatch && priorityMatch;
     });
 
+    // main app layout with header, filter controls and task list
     return (
         <div>
             <div>
