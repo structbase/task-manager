@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import type { Task, TaskStatus } from "./types";
 import { TaskList } from "./components/TaskList/TaskList";
 import { TaskFilter } from "./components/TaskFilter/TaskFilter";

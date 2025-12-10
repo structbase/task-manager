@@ -10,7 +10,7 @@ export const TaskList: React.FC<TaskListProps> = ({
     if (tasks.length === 0) {
         return (
             <div>
-                <div>No tasks Found</div>
+                <div>No tasks found</div>
             </div>
         );
     }

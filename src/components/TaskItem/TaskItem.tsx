@@ -1,6 +1,13 @@
 import React from "react";
 import type { TaskItemProps, TaskStatus } from "../../types";
 
+const capitalize = (str: string): string => {
+    return str
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+};
+
 export const TaskItem: React.FC<TaskItemProps> = ({
     task,
     onStatusChange,
@@ -10,16 +17,17 @@ export const TaskItem: React.FC<TaskItemProps> = ({
         <div>
             <div>
                 <h3>{task.title}</h3>
-                <span>{task.status.replace("-", " ")}</span>
+                <span>{capitalize(task.status)}</span>
             </div>
             <div>
                 <div>
                     <span>Due: </span>
                     <span>{task.priority}</span>
                 </div>
+                <p>{task.description}</p>
                 <div>
                     <span>Priority:</span>
-                    <span>{task.priority}</span>
+                    <span>{capitalize(task.priority)}</span>
                 </div>
             </div>
             <div>
