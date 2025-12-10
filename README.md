@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-This project is a React + TypeScript application that allows users to manage and organize their tasks efficiently. Users can create, filter, update, and delete tasks with status tracking (pending, in-progress, completed) and priority levels (low, medium, high). The app displays task details including titles, descriptions, due dates, and provides intuitive controls for task management.
+This project is a React + TypeScript application that allows users to manage and organize their tasks efficiently. Users can filter, update, and delete tasks with status tracking (pending, in-progress, completed) and priority levels (low, medium, high). The app displays task details including titles, descriptions, due dates, and provides intuitive controls for task management.
 
 The project is structured using reusable components:
 
