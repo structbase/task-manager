@@ -10,8 +10,11 @@ export const TaskList: React.FC<TaskListProps> = ({
     // show empty state message when there are no tasks to display
     if (tasks.length === 0) {
         return (
-            <div>
-                <div>No tasks found</div>
+            <div className="card shadow-sm">
+                <div className="card-body text-center py-5">
+                    <h5 className="text-muted mb-0">No tasks found</h5>
+                    <p className="text-muted mt-2 mb-0">try adjusting your filters</p>
+                </div>
             </div>
         );
     }
