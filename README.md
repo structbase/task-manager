@@ -85,6 +85,16 @@ http://localhost:5173
 
 ---
 
+### 🖥️ Desktop View
+
+![Desktop Screenshot](./public/screenshots/desktop.png)
+
+### 📱 Mobile View
+
+![Mobile Screenshot](./public/screenshots/mobile.png)
+
+---
+
 ## **File Structure**
 
 ```
@@ -121,6 +131,5 @@ http://localhost:5173
 ---
 
 # 📝 Reflection
-
 
 To ensure unique keys for list items, I relied on each task’s `id` property so React could correctly track and update individual components. While implementing filtering, I had to make sure the logic handled both status and priority without mutating the original task list. Updating task status required creating a new array using `map()` so state changes were predictable and triggered proper re-renders. The most challenging part of conditional rendering was handling empty states and ensuring components displayed correctly based on the current filters and task properties.
