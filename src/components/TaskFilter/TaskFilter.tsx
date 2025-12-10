@@ -36,25 +36,37 @@ export const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
 
     // render filter controls with dropdowns for status and priority selection
     return (
-        <div className="container d-flex">
-            <div className="card shadow-sm border-0 rounded-4">
-                <label> Filter by Status</label>
-                <select value={statusFilter} onChange={handleStatusChange}>
-                    <option value="all">All </option>
-                    <option value="pending">Pending</option>
-                    <option value="in-progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                </select>
-            </div>
+        <div className="card shadow-sm mb-4">
+            <div className="card-body">
+                <div className="row g-3 align-items-end">
+                    <div className="col-md-6">
+                        <label className="form-label fw-bold mb-2">Status</label>
+                        <select
+                            className="form-select"
+                            value={statusFilter}
+                            onChange={handleStatusChange}
+                        >
+                            <option value="all">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
 
-            <div className="card shadow-sm border-0 rounded-4">
-                <label>Filter by Priority</label>
-                <select value={priorityFilter} onChange={handlePriorityChange}>
-                    <option value="all">All </option>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                </select>
+                    <div className="col-md-6">
+                        <label className="form-label fw-bold mb-2">Priority</label>
+                        <select
+                            className="form-select"
+                            value={priorityFilter}
+                            onChange={handlePriorityChange}
+                        >
+                            <option value="all">All Priorities</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     );

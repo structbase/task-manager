@@ -127,9 +127,10 @@ function App() {
 
     // main app layout with header, filter controls and task list
     return (
-        <div>
-            <div>
-                <h1>Task Management</h1>
+        <div className="container py-5">
+            <div className="text-center mb-4">
+                <h1 className="display-4 fw-bold text-primary mb-2">Task Management</h1>
+                <p className="text-muted">organize and track your tasks efficiently</p>
             </div>
             <TaskFilter onFilterChange={handleFilterChange} />
             <TaskList
